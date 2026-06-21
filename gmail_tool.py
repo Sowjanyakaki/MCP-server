@@ -8,7 +8,7 @@ def create_email_draft(to: str, subject: str, body: str):
     service = build('gmail', 'v1', credentials=creds)
 
     message = EmailMessage()
-    message.set_content(body)
+    message.set_content(body, subtype='html')
     message['To'] = to
     message['Subject'] = subject
 
